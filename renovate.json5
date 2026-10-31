@@ -5,6 +5,8 @@
     'docker:pinDigests',
   ],
 
+  dependencyDashboard: false,
+
   'github-actions': {
     enabled: false,
   },
