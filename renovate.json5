@@ -1,6 +1,7 @@
 {
   extends: [
     'config:recommended',
+    'customManagers:dockerfileVersions',
     'docker:pinDigests',
   ],
 
