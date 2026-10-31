@@ -1,0 +1,33 @@
+{
+  extends: [
+    'config:recommended',
+    'docker:pinDigests',
+  ],
+
+  'github-actions': {
+    enabled: false,
+  },
+
+  // There are no PR checks, so automerge would otherwise never happen.
+  ignoreTests: true,
+
+  // Renovate only runs at 22:23 UTC, which is outside the default window of before 4am on Monday.
+  lockFileMaintenance: {
+    enabled: true,
+    schedule: [
+      'on monday',
+    ],
+  },
+
+  packageRules: [
+    {
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+        'digest',
+        'lockFileMaintenance',
+      ],
+      automerge: true,
+    },
+  ],
+}

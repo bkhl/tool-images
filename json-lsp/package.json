@@ -1,0 +1,4 @@
+{
+  "private": true,
+  "dependencies": { "vscode-langservers-extracted": "4.10.0" }
+}
