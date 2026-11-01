@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "gh-actions-language-server": "0.0.3"
+  }
+}
