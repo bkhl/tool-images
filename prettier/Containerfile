@@ -4,4 +4,4 @@ COPY package.json package-lock.json /opt/prettier/
 
 RUN npm --prefix=/opt/prettier ci --omit=dev --no-audit --no-fund && npm cache clean --force
 
-ENTRYPOINT ["/prettier/node_modules/.bin/prettier"]
+ENTRYPOINT ["/opt/prettier/node_modules/.bin/prettier"]
