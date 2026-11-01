@@ -16,9 +16,11 @@ jobs:
       fail-fast: false
       matrix:
         image:
+          - clangd
+          - dockerfile-language-server
+          - gh-actions-language-server
           - json-lsp
           - lua-language-server
-          - clangd
           - prettier
     steps:
       - uses: actions/checkout@v7
