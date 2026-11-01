@@ -1,0 +1,9 @@
+FROM docker.io/library/node:22-alpine
+
+RUN apk add --no-cache shellcheck shfmt
+
+COPY package.json package-lock.json /opt/bash-language-server/
+
+RUN npm --prefix /opt/bash-language-server ci --omit=dev --no-audit --no-fund && npm cache clean --force
+
+ENTRYPOINT ["/opt/bash-language-server/node_modules/.bin/bash-language-server", "start"]
