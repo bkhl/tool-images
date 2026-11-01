@@ -24,6 +24,8 @@ jobs:
           - prettier
     steps:
       - uses: actions/checkout@v7
+        with:
+          submodules: true
 
       - uses: docker/login-action@v4
         with:

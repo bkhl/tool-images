@@ -2,4 +2,7 @@ FROM docker.io/library/alpine:3.24.3@sha256:be2656061b536c1883c4034790e21d0a09c5
 
 RUN apk add --no-cache lua-language-server
 
-ENTRYPOINT ["/usr/bin/lua-language-server"]
+COPY addons/tic80/library/ /usr/lib/lua-language-server/meta/3rd/tic80/library/
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

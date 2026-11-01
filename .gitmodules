@@ -1,0 +1,3 @@
+[submodule "lua-language-server/addons/tic80"]
+	path = lua-language-server/addons/tic80
+	url = https://github.com/kupet00/tic-80-lua-language-server-addon
