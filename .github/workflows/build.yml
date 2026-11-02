@@ -16,12 +16,14 @@ jobs:
       fail-fast: false
       matrix:
         image:
+          - bash-language-server
           - clangd
           - dockerfile-language-server
           - gh-actions-language-server
           - json-lsp
           - lua-language-server
           - prettier
+          - yaml-language-server
     steps:
       - uses: actions/checkout@v7
         with:
