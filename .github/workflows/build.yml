@@ -20,6 +20,7 @@ jobs:
           - clangd
           - dockerfile-language-server
           - gh-actions-language-server
+          - go-template-lsp
           - json-lsp
           - lua-language-server
           - prettier

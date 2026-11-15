@@ -1,0 +1,14 @@
+FROM docker.io/library/golang:1.27.4-alpine@sha256:0a5f7fe796599ff487605987432e7619ae45beeb2fba4c2ce0b907879932aebf AS build
+
+WORKDIR /src
+
+COPY go.mod go.sum ./
+
+RUN CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o /go-template-lsp \
+    github.com/toba/go-template-lsp/cmd/go-template-lsp
+
+FROM scratch
+
+COPY --from=build /go-template-lsp /go-template-lsp
+
+ENTRYPOINT ["/go-template-lsp"]
