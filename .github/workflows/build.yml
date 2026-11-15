@@ -23,6 +23,7 @@ jobs:
           - json-lsp
           - lua-language-server
           - prettier
+          - taplo
           - yaml-language-server
     steps:
       - uses: actions/checkout@v7
